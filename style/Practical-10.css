@@ -191,7 +191,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../images/p1.jpg);
+    background-image: url(../images/project1.jpg);
     color: whitesmoke;
     height: 45vh;
     border-radius: 2px;
@@ -202,7 +202,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../images/p2.jpeg);
+    background-image: url(../images/project2.png);
     color: whitesmoke;
     height: 45vh;
     border-radius: 2px;
@@ -213,7 +213,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../images/p3.jpg);
+    background-image: url(../images/project3.png);
     color: whitesmoke;
     height: 45vh;
     border-radius: 2px;
