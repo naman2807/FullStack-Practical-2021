@@ -1,0 +1,263 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Practical-12</title>
+        <link rel = "icon" href =   "../images/title-logo.png" type = "image/x-icon">
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+          crossorigin="anonymous"
+        />
+        <style>
+          * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+          }
+          body {
+            background: rgb(211, 238, 236);
+            min-width: 100%;
+          }
+          .container {
+            background: rgb(255, 252, 247);
+            width: 80%;
+            margin: 20px auto;
+          }
+          .main-table {
+            width: 100%;
+            padding: 10px;
+          }
+          .main-table tr td {
+            padding: 5px;
+            text-align: center;
+            font-size: 20px;
+            border-right:2px solid white;
+            border-left:2px solid white;
+          }
+          .main-table tr td i {
+            padding: 10px;
+            text-align: center;
+            font-size: 30px;
+          }
+
+          .fa-times{
+              color: red;
+          }
+          i {
+            margin-right: 10px;
+          }
+          .container h3 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 20px;
+          }
+          .star {
+            background: rgb(216, 224, 231);
+          }
+          .diamond {
+            background: rgb(205, 176, 230);
+          }
+          .standard {
+            background: rgba(193, 147, 211, 0.5);
+          }
+          .deluxe {
+            background: rgba(85, 90, 160, 0.5);
+          }
+          table tr:first-child() {
+            font-size: 25px;
+          }
+          a {
+            text-decoration: none;
+            background: rgb(199, 116, 255);
+            padding: 10px;
+            border-radius: 10px;
+            vertical-align: middle;
+            color:white;
+            font-size: 20px;
+    
+          }
+          .fa-check{
+              color: green;
+          }
+          a:hover{
+              background: rgb(236, 185, 185);
+          }
+          tbody tr:nth-child(odd){
+              background: rgb(247, 247, 247);
+          }
+          tfoot tr:nth-child(odd){
+              background: rgb(255, 252, 247);
+          }
+          tfoot tr{
+              line-height:70px;
+          }
+          @media (max-width:710px){
+            .main-table{
+              padding:0px;
+            }
+            .main-table tr td i {
+            padding:5px;
+            text-align: center;
+            font-size: 20px;
+          }
+          a {
+            text-decoration: none;
+            background: rgb(223, 116, 255);
+            padding: 30px;
+            border-radius: 10px;
+            vertical-align: middle;
+            color:white;
+            font-size: 10px;
+    
+          }
+          .main-table tr td {
+            text-align: center;
+            font-size: 10px;
+            border-right:1px solid white;
+            border-left:1px solid white;
+          }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h3>SELECT YOUR PLAN</h3>
+          <table class="main-table">
+            <colgroup class="star"></colgroup>
+            <colgroup class="diamond"></colgroup>
+            <colgroup class="standard"></colgroup>
+            <colgroup class="deluxe"></colgroup>
+            <thead>
+              <tr>
+                <td>
+                  <i class="fa fa-building"> Basic</i>
+                </td>
+                <td>
+                  <i class="fa fa-diamond"> Plus</i>
+                </td>
+                <td>
+                  <i class="fa fa-telegram"> Deluxe</i>
+                </td>
+                <td>
+                  <i class="fa fa-tachometer"> Pro</i>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rs 500/-</td>
+                <td>Rs 1500/-</td>
+                <td>Rs 2500/-</td>
+                <td>Rs 3500/-</td>
+              </tr>
+              <tr>
+                <td>50 pages</td>
+                <td>75 pages</td>
+                <td>unlimited</td>
+                <td>unlimited</td>
+              </tr>
+              <tr>
+                <td>10 users</td>
+                <td>20 users</td>
+                <td>50 users</td>
+                <td>unlimited</td>
+              </tr>
+              <tr>
+                <td>10 sites</td>
+                <td>20 sites</td>
+                <td>50 sites</td>
+                <td>unlimited</td>
+              </tr>
+              <tr>
+                <td>50 MB</td>
+                <td>200 MB</td>
+                <td>1 GB</td>
+                <td>5 GB</td>
+              </tr>
+              <tr>
+                <td>included</td>
+                <td>included</td>
+                <td>included</td>
+                <td>included</td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </td>
+                <td>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </td>
+                <td>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </td>
+                <td>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="fa fa-times"></i>
+                </td>
+                <td>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </td>
+                <td>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </td>
+                <td>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="fa fa-times"></i>
+                </td>
+                <td>
+                  <i class="fa fa-times"></i>
+                </td>
+                <td>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </td>
+                <td>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="fa fa-times"></i>
+                </td>
+                <td>
+                  <i class="fa fa-times"></i>
+                </td>
+                <td>
+                  <i class="fa fa-times"></i>
+                </td>
+                <td>
+                  <i class="fa fa-check" aria-hidden="true"></i>
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>
+                  <a href="">Sign up</a>
+                </td>
+                <td>
+                  <a href="">Sign up</a>
+                </td>
+                <td>
+                  <a href="">Sign up</a>
+                </td>
+                <td>
+                  <a href="">Sign up</a>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </body>
+    </html>
