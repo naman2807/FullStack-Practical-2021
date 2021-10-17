@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 14</title>
+    <style>
+        body {
+            background-color: grey;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 70px;
+        }
+        
+        button {
+            background-color: yellow;
+            width: 60px;
+            height: 60px;
+            margin: auto;
+            margin-left: 530px;
+        }
+        
+        #pos {
+            margin-left: 70px;
+        }
+        
+        input {
+            position: relative;
+            top: 2px;
+            left: 45px;
+            width: 50px;
+            background-color: grey;
+            font-size: 40px;
+            color: yellow;
+            /* margin-left: 150px; */
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>COUNTER</h1>
+
+    <div class="container">
+        <button id="neg"> - </button>
+        <input type="text" id="quantity" readonly="" value="0">
+        <button id="pos"> + </button>
+    </div>
+    <script>
+        var add = document.getElementById("pos");
+        var sub = document.getElementById("neg");
+        var qty = document.getElementById("quantity");
+
+        sub.setAttribute("disabled", "disabled");
+
+
+        add.addEventListener('click', () => {
+            var valuecount = parseInt(qty.value) + 1;
+            qty.value = valuecount;
+
+
+            if (valuecount >= 1) {
+                sub.removeAttribute("disabled", "disabled");
+            }
+
+        });
+
+
+        sub.addEventListener('click', () => {
+            var valuecount = parseInt(qty.value) - 1;
+            qty.value = valuecount;
+
+
+            if (valuecount == 0) {
+                sub.setAttribute("disabled", "disabled");
+            }
+
+        });
+    </script>
+</body>
+
+</html>
