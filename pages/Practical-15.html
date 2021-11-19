@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Practical-15</title>
+</head>
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(38, 0, 128, 0.842);
+}
+
+#container {
+    width: 425px;
+    min-height: 500px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-left: 425px;
+    margin-top: 40px;
+    border-radius: 5px;
+    padding-bottom: 25px;
+}
+
+.text {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+} */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* max-width: 400px; */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  /* padding: 50px; */
+}
+
+.title {
+  padding: 25px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: rgb(243, 241, 241);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+form div input {
+  width: 85%;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #c4c4c4;
+  padding: 0 15px;
+  margin-left:29px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 30px;
+}
+
+form div {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+input:focus {
+  border: 2px solid grey;
+}
+
+form div i {
+  position: absolute;
+  padding: 10px;
+}
+
+.success-icon,
+.failure-icon {
+  opacity: 0;
+  margin-left: -35px;
+  margin-top: 1px;
+}
+
+.failure-icon,
+.error {
+  color: red;
+}
+
+.success-icon {
+  color: green;
+}
+
+.error {
+  font-size: 14.5px;
+  margin-top: 5px;
+  margin-left: 31px;
+}
+
+button {
+  margin-top: 15px;
+  margin-left: 30px;
+  width: 85%;
+  height: 40px;
+  background-color: rgba(38, 0, 128, 0.842);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s ease;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+</style>
+<body>
+    <div id="container">
+      <form id="form">
+        <header class="title">Create Account</header>
+  
+        <div>
+         <label for="username">Username</label>
+         <input type="text" name="username" id="username" placeholder="Enter Username" pattern="[a-z\0-9]{0,50}" />
+         <i class="fa fa-exclamation-circle failure-icon"></i>
+         <i class="fa fa-check-circle success-icon"></i>
+         <div class="error"></div>
+       </div>
+  
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Enter Email" />
+          <i class="fa fa-exclamation-circle failure-icon"></i>
+          <i class="fa fa-check-circle success-icon"></i>
+          <div class="error"></div>
+        </div>
+  
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" placeholder="Enter Password" />
+          <i class="fa fa-exclamation-circle failure-icon"></i>
+          <i class="fa fa-check-circle success-icon"></i>
+          <div class="error"></div>
+        </div>
+
+       <div>
+          <label for="password">Password Again</label>
+          <input type="password" name="password" id="password2" placeholder="Enter Password Again" />
+          <i class="fa fa-exclamation-circle failure-icon"></i>
+          <i class="fa fa-check-circle success-icon"></i>
+          <div class="error"></div>
+        </div>
+  
+       <button type="submit" id="submit" onclick="changeStyle()">Submit</button>
+
+      </form>
+    </div>
+    
+    <script>
+    let id = (id) => document.getElementById(id);
+
+    let classes = (classes) => document.getElementsByClassName(classes);
+
+    let username = id("username"),
+        email = id("email"),
+        password = id("password"),
+        password2 = id("password2"),
+        form = id("form"),
+        errorMsg = classes("error"),
+        successIcon = classes("success-icon"),
+        failureIcon = classes("failure-icon");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      engine(username, 0, "Username can not be Blank");
+      engine(email, 1, "Email-ID can not be Blank");
+      engine(password, 2, "Password can not be Blank");
+      engine1(password2, 3, "Password2 can not be Blank");
+      });
+
+    let engine = (id, serial, message) => {
+      if (id.value.trim() === "") {
+        errorMsg[serial].innerHTML = message;
+        id.style.border = "2px solid red";
+
+        failureIcon[serial].style.opacity = "1";
+        successIcon[serial].style.opacity = "0";
+      } else {
+        errorMsg[serial].innerHTML = "";
+        id.style.border = "2px solid green";
+
+        failureIcon[serial].style.opacity = "0";
+        successIcon[serial].style.opacity = "1";
+    
+        }
+    }
+
+    let engine1 = (id, serial, message) => {
+     if (id.value.trim() === "") {
+        errorMsg[serial].innerHTML = message;
+        id.style.border = "2px solid red";
+
+        failureIcon[serial].style.opacity = "1";
+        successIcon[serial].style.opacity = "0";
+       }
+     else {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("password2").value;
+         if (password != confirmPassword) {
+           errorMsg[serial].innerHTML = "Password did not Match";
+           id.style.border = "2px solid red";
+
+           failureIcon[serial].style.opacity = "1";
+           successIcon[serial].style.opacity = "0";
+          }
+         else{
+           errorMsg[serial].innerHTML = "";
+           id.style.border = "2px solid green";
+
+           failureIcon[serial].style.opacity = "0";
+           successIcon[serial].style.opacity = "1";
+    
+          }
+      }
+    }
+
+   </script>
+</body>
+</html>
